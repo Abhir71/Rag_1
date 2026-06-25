@@ -49,7 +49,7 @@ pipeline {
                     sh '''
                         git config user.email "jenkins@local"
                         git config user.name "Jenkins"
-                        git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/YOUR_USERNAME/rag-pdf-summarizer.git
+                        git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/Abhir71/Rag_1.git
                         git push origin main
                     '''
                 }
