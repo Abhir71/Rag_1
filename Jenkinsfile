@@ -38,7 +38,7 @@ pipeline {
 
         stage('Push to GitHub') {
             when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
+                expression {currentBuild.result == 'SUCCESS' }
             }
             steps {
                 withCredentials([usernamePassword(
