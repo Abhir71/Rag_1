@@ -50,7 +50,7 @@ pipeline {
                         git config user.email "jenkins@local"
                         git config user.name "Jenkins"
                         git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/Abhir71/Rag_1.git
-                        git checkout mian
+                        git checkout main
                         git merge dev
                         git push origin main
                     '''
