@@ -38,7 +38,7 @@ pipeline {
 
         stage('Push to Main') {
             when {
-                expression {currentBuild.result == 'SUCCESS' }
+                expression {currentBuild.result == null }
             }
             steps {
                 withCredentials([usernamePassword(
@@ -60,7 +60,7 @@ pipeline {
     }
 
     post {
-        success { echo '✅ Tests passed — pushed to GitHub!' }
+        success { echo '✅ Tests passed — pushed to Main!' }
         failure { echo '❌ Tests failed — push skipped.' }
     }
 }
