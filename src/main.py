@@ -49,7 +49,13 @@ def build_rag_chain(vector_db, llm_model: str= "mistral"):
     llm=ChatOllama(model=llm_model)
     retriever= vector_db.as_retriever()
 
-    template = """Answer the question based ONLY on the following context:
+    template = """YYou are an expert at reformulating search queries to maximize document retrieval accuracy.
+     Given the user's question below, generate 3 alternative versions of it that:
+     - Approach the topic from different angles
+     - Use different vocabulary and phrasing
+     - Capture different aspects the original question might miss.
+     - Answer the User Question in Simple Manner.
+     Answer the question based ONLY on the following context:
 {context}
 Question: {question}
 """
