@@ -33,7 +33,7 @@ def load_and_split_pdf(file_path: str, chunk_size: int = 500, chunk_overlap: int
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap
     )
-    return text_splitter.split_documents(docs)
+    # return text_splitter.split_documents(docs)
 
 
 def build_vector_db(texts, embedding_model: str = "qwen3-embedding", collection_name: str = "local_rag"):  ## Chroma.from_documents(
