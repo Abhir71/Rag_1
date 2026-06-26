@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GITHUB_REPO = 'https://github.com/Abhir71/Rag_1.git'
-        GIT_BRANCH  = 'main'
+        GIT_BRANCH  = 'dev'
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
             }
         }
 
-        stage('Push to GitHub') {
+        stage('Push to Main') {
             when {
                 expression {currentBuild.result == 'SUCCESS' }
             }
@@ -50,6 +50,8 @@ pipeline {
                         git config user.email "jenkins@local"
                         git config user.name "Jenkins"
                         git remote set-url origin https://${GIT_USER}:${GIT_TOKEN}@github.com/Abhir71/Rag_1.git
+                        git checkout mian
+                        git merge dev
                         git push origin main
                     '''
                 }
